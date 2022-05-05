@@ -9,7 +9,7 @@ const Cards = ({allProducts, onBuyApp}) => {
                  category={category}
                  name={name}
                  price={price}
-                 onBuy={() => onBuyApp(index + 1)} />
+                 onBuy={() => onBuyApp(index)} />
   });
   
   return (

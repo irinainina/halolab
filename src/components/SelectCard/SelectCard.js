@@ -3,7 +3,7 @@ import './SelectCard.css';
 import Form from '../Form/Form';
 
 const SelectCard = ({allProducts, cheapProductIndex, selectCardIndex, onClose}) => {
-  const index = selectCardIndex ?  selectCardIndex - 1 : cheapProductIndex;
+  const index = selectCardIndex || cheapProductIndex;
   return (
     <div className="card select-card">
       <h3 className="category">{allProducts[index].category}</h3>
