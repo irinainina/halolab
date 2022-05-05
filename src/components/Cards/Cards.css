@@ -4,5 +4,6 @@
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 40px;
+  min-height: 552px;
   margin-bottom: 70px;
 }

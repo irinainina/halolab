@@ -73,11 +73,7 @@
   transition: .3s;
 }
 
-.close:hover {
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.5);
-}
-
-.close:before, .close:after {
+.close::before, .close::after {
   position: absolute;
   top: 12px;
   left: 20px;
@@ -91,4 +87,13 @@
 }
 .close:after {
   transform: rotate(-45deg);
+}
+
+.close:hover {
+  background-color: #4BCFA0;
+}
+
+.close:hover::before, 
+.close:hover::after {
+  background-color: #ffffff;
 }

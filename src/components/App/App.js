@@ -10,7 +10,7 @@ class App extends Component {
     allProducts: [],
     cheapProductIndex: null,
     selectCardIndex: null,
-    selectProduct: false
+    isSelectProduct: false
   }
 
   apiServise = new APIServise();
@@ -40,37 +40,31 @@ class App extends Component {
   }
 
   getSelectCard = (index) => {
-    this.setState(({selectCardIndex, selectProduct}) => {
-      return {
-        selectCardIndex: index,
-        selectProduct: true
-      }
+    this.setState({
+      selectCardIndex: index,
+      isSelectProduct: true
     });
   };
 
   onClose = () => {
-    this.setState(({selectCardIndex, selectProduct}) => {
-      return {
-        selectCardIndex: null,
-        selectProduct: false
-      }
+    this.setState({
+      selectCardIndex: null,
+      isSelectProduct: false
     });
   };
 
   onSelect = () => {
-    this.setState(({selectProduct}) => {
-      return {
-        selectProduct: true
-      }
+    this.setState({
+      isSelectProduct: true
     });
   };
 
   render() {
-    const { allProducts, cheapProductIndex, selectCardIndex, selectProduct } = this.state;    
+    const { allProducts, cheapProductIndex, selectCardIndex, isSelectProduct } = this.state;    
     
     return (      
       <div className="container">
-        { !selectProduct ? null : <ModalWindow 
+        { !isSelectProduct ? null : <ModalWindow 
         allProducts={allProducts}
         cheapProductIndex={cheapProductIndex}
         selectCardIndex={selectCardIndex}
