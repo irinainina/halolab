@@ -8,8 +8,9 @@ import APIServise from '../../servises/api-servise';
 class App extends Component {
   state = {
     allProducts: [],
-    cheapProduct: {},
-    selectCardIndex: null
+    cheapProductIndex: null,
+    selectCardIndex: null,
+    selectProduct: false
   }
 
   apiServise = new APIServise();
@@ -17,6 +18,7 @@ class App extends Component {
   constructor() {
     super();
     this.getAllProducts();
+    this.getCheapProductIndex();
   }
 
   getAllProducts() {
@@ -25,28 +27,59 @@ class App extends Component {
          this.setState({
           allProducts: items
          })
-         console.log(items);
       })
   }
 
-  getCheapProduct() {
-    this.apiServise.getCheapProduct()
-      .then(item => {
+  getCheapProductIndex() {
+    this.apiServise.getCheapProductIndex()
+      .then(index => {
          this.setState({
-          cheapProduct: item
+          cheapProductIndex: index
          })
-         console.log(item);
       })
   }
+
+  getSelectCard = (index) => {
+    this.setState(({selectCardIndex, selectProduct}) => {
+      return {
+        selectCardIndex: index,
+        selectProduct: true
+      }
+    });
+  };
+
+  onClose = () => {
+    this.setState(({selectCardIndex, selectProduct}) => {
+      return {
+        selectCardIndex: null,
+        selectProduct: false
+      }
+    });
+  };
+
+  onSelect = () => {
+    this.setState(({selectProduct}) => {
+      return {
+        selectProduct: true
+      }
+    });
+  };
 
   render() {
-    const { allProducts, cheapProduct, selectCardIndex } = this.state;    
+    const { allProducts, cheapProductIndex, selectCardIndex, selectProduct } = this.state;    
     
     return (      
       <div className="container">
-        {selectCardIndex ? <ModalWindow /> : null}
-        <Cards allProducts={allProducts} />
-        <CheapBtn cheapProduct={cheapProduct} />
+        { !selectProduct ? null : <ModalWindow 
+        allProducts={allProducts}
+        cheapProductIndex={cheapProductIndex}
+        selectCardIndex={selectCardIndex}
+        onClose={this.onClose} />}
+        <Cards 
+        allProducts={allProducts} 
+        onBuyApp={this.getSelectCard} />
+        <CheapBtn 
+        onCheapBtnClick={this.onSelect} />
       </div>
     );
   }  

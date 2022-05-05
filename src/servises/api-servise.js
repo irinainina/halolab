@@ -12,13 +12,13 @@ class APIServise {
     return this.getData();
   }
 
-  async getCheapProduct() {
+  async getCheapProductIndex() {
     const allProductsArr = await this.getData();
-    const indexCheapProduct = allProductsArr.reduce(
+    const index = allProductsArr.reduce(
       (previousValue, currentValue, index, array) => {
       return (currentValue.price < array[previousValue].price) ? index : previousValue;
     }, 0);
-    return allProductsArr[indexCheapProduct];
+    return index;
   }
 }
 
