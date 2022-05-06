@@ -27,20 +27,13 @@ class Form extends Component {
       name: event.target.value
      })
      this.validName();
-     console.log(this.state.name)
   }
 
   blurPhone = (event) => {
     this.setState({
-      name: event.target.value
+      phone: event.target.value
      })
      this.validPhone();
-     console.log(this.state.phone)
-  }
-
-  onSubmit = (event) => {
-    event.preventDefault();
-    console.log(this.state.name, this.state.phone)
   }
 
   validName() {
@@ -81,28 +74,53 @@ class Form extends Component {
     }
   }
 
+  focusName = () => {
+    this.setState({
+      name: '',
+      nameError: ''
+    });
+  }
+
+  focusPhone = () => {
+    this.setState({
+      phone: '',
+      phoneError: ''
+    });
+  }
+
+  onSubmit = (event) => {
+    event.preventDefault();
+    this.validName();
+    this.validPhone();
+    if(!this.state.nameError && !this.state.phoneError) {
+      console.log(` name: ${this.state.name}\n phone: ${this.state.phone}`)
+    }
+  }
+
   render() {
     return (
-      <form action="#"
-      onSubmit={this.onSubmit}>
-        
+      <form action="#" onSubmit={this.onSubmit}>        
         <input type="text" 
         className={this.state.nameError ? "input input-error" : "input"}
         id="name-input"
-        placeholder="Name" 
+        placeholder="Name"
+        value={this.state.name}
         onChange={this.getName}
-        onBlur={this.blurName} />
+        onBlur={this.blurName}
+        onFocus={this.focusName} />
         <label htmlFor="name-input">{this.state.nameError}</label>
         
         <input type="tel"
         className={this.state.phoneError ? "input input-error" : "input"}
         id="phone-input"
-        placeholder="Number" 
+        placeholder="Number"
+        value={this.state.phone}
         onChange={this.getPhone}
-        onBlur={this.blurPhone} />
+        onBlur={this.blurPhone}
+        onFocus={this.focusPhone} />
         <label htmlFor="phone-input">{this.state.phoneError}</label>
 
-        <button type="submit" className="order-btn">Order</button>
+        <button type="submit" className="order-btn">Order<span className="arrow-right"></span></button>
       </form>
     );
   }

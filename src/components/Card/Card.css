@@ -13,7 +13,8 @@
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0.04em;
-  text-transform: uppercase;  
+  text-transform: uppercase;
+  color: #7f7f7f;  
 }
 
 .name {
