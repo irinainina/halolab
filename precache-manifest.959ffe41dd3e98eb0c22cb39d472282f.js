@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a90a2db819cd0fe4ac582c6895361bf0",
+    "revision": "10942434a1701b8266ee0cfc1214489d",
     "url": "/halolab/index.html"
   },
   {
-    "revision": "5db694004a9cbc3aca8a",
+    "revision": "2c4b086cf290d6703277",
     "url": "/halolab/static/css/main.7eabf340.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/halolab/static/js/2.65f6b363.chunk.js"
   },
   {
-    "revision": "5db694004a9cbc3aca8a",
-    "url": "/halolab/static/js/main.61eee972.chunk.js"
+    "revision": "2c4b086cf290d6703277",
+    "url": "/halolab/static/js/main.c721610d.chunk.js"
   },
   {
     "revision": "f3db210a6a101a5351df",
