@@ -1,2 +1,2 @@
-# holalab
-https://irinainina.github.io/holalab/
+# halolab
+https://irinainina.github.io/halolab/

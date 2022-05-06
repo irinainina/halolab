@@ -1,8 +1,8 @@
 {
-  "name": "holalab",
+  "name": "halolab",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://irinainina.github.io/holalab/",
+  "homepage": "https://irinainina.github.io/halolab/",
   "dependencies": {
     "gh-pages": "^2.1.1",
     "react": "^16.9.0",
