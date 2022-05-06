@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/holalab/static/css/main.2a07bfd6.chunk.css",
-    "main.js": "/holalab/static/js/main.08a910e3.chunk.js",
-    "main.js.map": "/holalab/static/js/main.08a910e3.chunk.js.map",
-    "runtime~main.js": "/holalab/static/js/runtime~main.07463d3b.js",
-    "runtime~main.js.map": "/holalab/static/js/runtime~main.07463d3b.js.map",
-    "static/js/2.eb23db15.chunk.js": "/holalab/static/js/2.eb23db15.chunk.js",
-    "static/js/2.eb23db15.chunk.js.map": "/holalab/static/js/2.eb23db15.chunk.js.map",
-    "index.html": "/holalab/index.html",
-    "precache-manifest.b791ce5db9b853d3d256b2b821856600.js": "/holalab/precache-manifest.b791ce5db9b853d3d256b2b821856600.js",
-    "service-worker.js": "/holalab/service-worker.js",
-    "static/css/main.2a07bfd6.chunk.css.map": "/holalab/static/css/main.2a07bfd6.chunk.css.map",
-    "static/media/Form.css": "/holalab/static/media/error.bda65db9.svg"
+    "main.css": "/halolab/static/css/main.7eabf340.chunk.css",
+    "main.js": "/halolab/static/js/main.61eee972.chunk.js",
+    "main.js.map": "/halolab/static/js/main.61eee972.chunk.js.map",
+    "runtime~main.js": "/halolab/static/js/runtime~main.b19ef9aa.js",
+    "runtime~main.js.map": "/halolab/static/js/runtime~main.b19ef9aa.js.map",
+    "static/js/2.65f6b363.chunk.js": "/halolab/static/js/2.65f6b363.chunk.js",
+    "static/js/2.65f6b363.chunk.js.map": "/halolab/static/js/2.65f6b363.chunk.js.map",
+    "index.html": "/halolab/index.html",
+    "precache-manifest.01dacd6c941ea153a5eb84906c6f5bc5.js": "/halolab/precache-manifest.01dacd6c941ea153a5eb84906c6f5bc5.js",
+    "service-worker.js": "/halolab/service-worker.js",
+    "static/css/main.7eabf340.chunk.css.map": "/halolab/static/css/main.7eabf340.chunk.css.map",
+    "static/media/Form.css": "/halolab/static/media/error.358bbcef.svg"
   }
 }
