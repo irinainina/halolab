@@ -10,33 +10,8 @@ class Form extends Component {
     phoneError: ''
   }
 
-  getName = (event) => {
-    this.setState({
-      name: event.target.value
-     })
-  }
-
-  getPhone = (event) => {
-    this.setState({
-      phone: event.target.value
-     })
-  }
-
-  blurName = (event) => {
-    this.setState({
-      name: event.target.value
-     })
-     this.validName();
-  }
-
-  blurPhone = (event) => {
-    this.setState({
-      phone: event.target.value
-     })
-     this.validPhone();
-  }
-
   validName() {
+    let isNameValid = false;
     const name = this.state.name;
     if(name === '') {
       this.setState({
@@ -50,10 +25,13 @@ class Form extends Component {
       this.setState({
         nameError: ''
       });
+      isNameValid = true;
     }
+    return isNameValid
   }
 
   validPhone() {
+    let isPhoneValid = false;
     const phone = this.state.phone;
     if(phone === '') {
       this.setState({
@@ -71,28 +49,49 @@ class Form extends Component {
       this.setState({
         phoneError: ''
       });
+      isPhoneValid = true;
     }
+    return isPhoneValid;
   }
 
-  focusName = () => {
-    this.setState({
-      name: '',
-      nameError: ''
-    });
+  validInput(inputName) {
+    if(inputName === 'name') {
+      this.validName();
+    }
+    if(inputName === 'phone') {
+      this.validPhone();
+    }
+    if(!inputName) {
+      this.validName();
+      this.validPhone();
+    }
+    return this.validName() && this.validPhone();
   }
 
-  focusPhone = () => {
+  getInputValue = (event) => {
     this.setState({
-      phone: '',
-      phoneError: ''
+      [event.target.name]: event.target.value
+     })
+  }
+
+  blurInput = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+     })
+     this.validInput(event.target.name);
+  }
+
+  focusInput = (event) => {
+    this.setState({
+      [event.target.name]: '',
+      [`${event.target.name}Error`]: ''
     });
   }
 
   onSubmit = (event) => {
     event.preventDefault();
-    this.validName();
-    this.validPhone();
-    if(!this.state.nameError && !this.state.phoneError) {
+    this.validInput();
+    if(this.validInput()) {
       console.log(` name: ${this.state.name}\n phone: ${this.state.phone}`)
     }
   }
@@ -104,20 +103,22 @@ class Form extends Component {
         className={this.state.nameError ? "input input-error" : "input"}
         id="name-input"
         placeholder="Name"
-        value={this.state.name}
-        onChange={this.getName}
-        onBlur={this.blurName}
-        onFocus={this.focusName} />
+        name={"name"}
+        value={this.state.name}        
+        onChange={this.getInputValue}
+        onBlur={this.blurInput}
+        onFocus={this.focusInput} />
         <label htmlFor="name-input">{this.state.nameError}</label>
         
         <input type="tel"
         className={this.state.phoneError ? "input input-error" : "input"}
         id="phone-input"
         placeholder="Number"
+        name={"phone"}
         value={this.state.phone}
-        onChange={this.getPhone}
-        onBlur={this.blurPhone}
-        onFocus={this.focusPhone} />
+        onChange={this.getInputValue}
+        onBlur={this.blurInput}
+        onFocus={this.focusInput} />
         <label htmlFor="phone-input">{this.state.phoneError}</label>
 
         <button type="submit" className="order-btn">Order<span className="arrow-right"></span></button>
