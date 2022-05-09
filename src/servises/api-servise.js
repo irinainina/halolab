@@ -1,8 +1,6 @@
 class APIServise {
   async getData() {
-    const base = 'https://run.mocky.io/v3/';
-    const key = 'b7d36eea-0b3f-414a-ba44-711b5f5e528e';
-    const url = base + key;
+    const url = 'https://halolab.herokuapp.com/cards';
     const res = await fetch(url);
     const data = await res.json();
     return data;
