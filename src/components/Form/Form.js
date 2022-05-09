@@ -37,6 +37,7 @@ class Form extends Component {
   }
 
   validName() {
+    let isValidName = false;
     const name = this.state.name;
     if(name === '') {
       this.setState({
@@ -50,10 +51,13 @@ class Form extends Component {
       this.setState({
         nameError: ''
       });
+      isValidName = true;
     }
+    return isValidName;
   }
 
   validPhone() {
+    let isValidFhone = false;
     const phone = this.state.phone;
     if(phone === '') {
       this.setState({
@@ -71,7 +75,9 @@ class Form extends Component {
       this.setState({
         phoneError: ''
       });
+      isValidFhone = true;
     }
+    return isValidFhone;
   }
 
   focusName = () => {
@@ -92,7 +98,7 @@ class Form extends Component {
     event.preventDefault();
     this.validName();
     this.validPhone();
-    if(!this.state.nameError && !this.state.phoneError) {
+    if(this.validName() && this.validPhone()) {
       console.log(` name: ${this.state.name}\n phone: ${this.state.phone}`)
     }
   }
