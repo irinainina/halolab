@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/halolab/static/css/main.7eabf340.chunk.css",
-    "main.js": "/halolab/static/js/main.c721610d.chunk.js",
-    "main.js.map": "/halolab/static/js/main.c721610d.chunk.js.map",
+    "main.css": "/halolab/static/css/main.9fdb2aa7.chunk.css",
+    "main.js": "/halolab/static/js/main.5ca77a41.chunk.js",
+    "main.js.map": "/halolab/static/js/main.5ca77a41.chunk.js.map",
     "runtime~main.js": "/halolab/static/js/runtime~main.b19ef9aa.js",
     "runtime~main.js.map": "/halolab/static/js/runtime~main.b19ef9aa.js.map",
-    "static/js/2.65f6b363.chunk.js": "/halolab/static/js/2.65f6b363.chunk.js",
-    "static/js/2.65f6b363.chunk.js.map": "/halolab/static/js/2.65f6b363.chunk.js.map",
+    "static/js/2.324eed90.chunk.js": "/halolab/static/js/2.324eed90.chunk.js",
+    "static/js/2.324eed90.chunk.js.map": "/halolab/static/js/2.324eed90.chunk.js.map",
     "index.html": "/halolab/index.html",
-    "precache-manifest.959ffe41dd3e98eb0c22cb39d472282f.js": "/halolab/precache-manifest.959ffe41dd3e98eb0c22cb39d472282f.js",
+    "precache-manifest.3ca6f462ecd1b161ef1b09fe9bce6676.js": "/halolab/precache-manifest.3ca6f462ecd1b161ef1b09fe9bce6676.js",
     "service-worker.js": "/halolab/service-worker.js",
-    "static/css/main.7eabf340.chunk.css.map": "/halolab/static/css/main.7eabf340.chunk.css.map",
-    "static/media/Form.css": "/halolab/static/media/error.358bbcef.svg"
+    "static/css/main.9fdb2aa7.chunk.css.map": "/halolab/static/css/main.9fdb2aa7.chunk.css.map",
+    "static/media/Form.css": "/halolab/static/media/error.bda65db9.svg"
   }
 }
